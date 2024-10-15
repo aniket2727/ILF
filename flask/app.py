@@ -24,5 +24,6 @@ def hash_password_route():
         return error  # Return error response if any
     return jsonify({"hashed_password": hashed_password}), 200  # Return the hashed password
 
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)  # Run the app on port 5000

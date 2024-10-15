@@ -14,7 +14,7 @@ const registerUser = async (req, res) => {
 
         // Hash the password using the microservice
         const response = await axios.post('http://localhost:5000/hash-password', { password });
-        console.log(response);
+       // console.log(response);
 
         if (response.status !== 200) {
             return res.status(500).json({ message: 'Error hashing password' });

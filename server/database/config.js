@@ -8,21 +8,21 @@ mongoose.connect(dbURI);
 
 // Event listeners for connection
 mongoose.connection.on('connected', () => {
-    console.log('Mongoose connected to ' + dbURI);
+   // console.log('Mongoose connected to ' + dbURI);
 });
 
 mongoose.connection.on('error', (err) => {
-    console.error('Mongoose connection error: ' + err);
+   // console.error('Mongoose connection error: ' + err);
 });
 
 mongoose.connection.on('disconnected', () => {
-    console.log('Mongoose disconnected');
+   // console.log('Mongoose disconnected');
 });
 
 // Handling application termination
 process.on('SIGINT', () => {
     mongoose.connection.close(() => {
-        console.log('Mongoose disconnected through app termination');
+       // console.log('Mongoose disconnected through app termination');
         process.exit(0);
     });
 });
